@@ -1,0 +1,444 @@
+/* --- BIẾN TOÀN CỤC VÀ THIẾT LẬP CƠ BẢN --- */
+:root {
+    --primary-green: #4CAF50;
+    --dark-green: #388E3C;
+    --light-green: #C8E6C9;
+    --accent-orange: #FF9800;
+    --text-color: #333;
+    --background-color: #F8F9FA;
+    --white-color: #FFFFFF;
+    --font-family: 'Quicksand', sans-serif;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--white-color);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.2rem;
+    color: var(--dark-green);
+    margin-bottom: 40px;
+}
+
+/* --- HIỆU ỨNG --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* --- THANH THÔNG BÁO & HEADER --- */
+.announcement-bar {
+    background-color: var(--dark-green);
+    color: var(--white-color);
+    text-align: center;
+    padding: 10px;
+    font-weight: 500;
+}
+
+header {
+    background-color: var(--white-color);
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--dark-green);
+}
+
+/* --- NÚT BẤM (CTA) --- */
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-green);
+    color: var(--white-color);
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s, transform 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.cta-button:hover {
+    background-color: var(--dark-green);
+    transform: translateY(-2px);
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--primary-green);
+    padding: 10px 22px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 2px solid var(--primary-green);
+    transition: all 0.3s;
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--primary-green);
+    color: var(--white-color);
+}
+
+/* --- HERO SECTION --- */
+#hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://placehold.co/1920x1080/4CAF50/ffffff?text=Nền+Nông+Trại') no-repeat center center/cover;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--white-color);
+    padding: 0 20px;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- CÁC KHU VỰC KHÁC --- */
+#problem-solution {
+    background: var(--background-color);
+    text-align: center;
+}
+.problem-solution-content {
+    max-width: 700px;
+    margin: 0 auto;
+}
+.problem-solution-content h3 {
+    color: var(--primary-green);
+    margin-top: 20px;
+}
+
+#features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-item i {
+    font-size: 2.5rem;
+    color: var(--primary-green);
+    margin-bottom: 15px;
+}
+
+#products {
+    background-color: var(--background-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s;
+}
+.product-card:hover {
+    transform: translateY(-5px);
+}
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.product-card h3 {
+    margin: 15px 0 10px;
+}
+.product-card .price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    margin: 10px 0;
+}
+.product-card .cta-button {
+    margin: 15px 0;
+}
+
+#story {
+    background: var(--light-green);
+}
+.story-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.story-image {
+    flex: 1;
+}
+.story-image img {
+    width: 100%;
+    border-radius: var(--border-radius);
+}
+.story-content {
+    flex: 1;
+}
+
+#testimonials {
+    text-align: center;
+}
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+.testimonial-card {
+    background: var(--background-color);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    border-left: 5px solid var(--primary-green);
+}
+.customer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+.customer img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.customer span {
+    font-weight: 700;
+}
+
+#faq {
+    max-width: 800px;
+    margin: 0 auto;
+}
+details {
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    padding: 15px 20px;
+}
+summary {
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none; /* Remove default marker */
+}
+summary::-webkit-details-marker { display: none; }
+summary::after {
+    content: '+';
+    float: right;
+    font-size: 1.5rem;
+    transition: transform 0.3s;
+}
+details[open] summary::after {
+    transform: rotate(45deg);
+}
+details p {
+    margin-top: 15px;
+}
+
+#final-cta {
+    background-color: var(--dark-green);
+    color: var(--white-color);
+    text-align: center;
+}
+#final-cta .cta-button {
+    background-color: var(--accent-orange);
+}
+
+footer {
+    background-color: #2c3e50;
+    color: var(--white-color);
+    padding-top: 40px;
+    text-align: center;
+}
+.social-links a {
+    color: var(--white-color);
+    margin: 0 10px;
+    font-size: 1.2rem;
+}
+.footer-bottom {
+    border-top: 1px solid #4a627a;
+    padding: 20px 0;
+    margin-top: 30px;
+    font-size: 0.9rem;
+}
+
+/* --- MODAL & FORM STYLING --- */
+.modal {
+    display: none; /* Ẩn mặc định */
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.2);
+    position: relative;
+    width: 90%;
+    max-width: 500px;
+    animation: slideIn 0.4s;
+}
+
+@keyframes slideIn {
+    from { transform: translateY(-50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.close-button {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content h3 {
+    text-align: center;
+    color: var(--dark-green);
+    margin-bottom: 25px;
+    font-size: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: var(--font-family);
+    font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-green);
+}
+
+.form-submit-button {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+
+/* --- RESPONSIVE DESIGN --- */
+@media (max-width: 992px) {
+    #features, .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .story-container {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    .section-title { font-size: 1.8rem; }
+    .hero-content h1 { font-size: 2.2rem; }
+    #features, .product-grid, .testimonial-grid {
+        grid-template-columns: 1fr;
+    }
+    header .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
